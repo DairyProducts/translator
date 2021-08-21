@@ -73,7 +73,7 @@ canvas.create_window(85, 380, window=clock1)
 
 def opendark():
     root.destroy()
-    os.system('101.py')
+    os.system('120.py')
 
 def translate():
     global outputthis

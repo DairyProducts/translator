@@ -113,19 +113,19 @@ def translate():
         output=trans.translate(transthis, src=fromcode, dest=tocode)
         output=output.text
     '''
-    # try:
-    output=trans.translate(transthis, src=fromcode, dest=tocode)
-    output=output.text
-    outputlabel=tk.Label(root, text='Output:')
-    outputlabel.config(font=('lightcyan,13'), fg='aqua', bg=bgcolor)
-    outputthis=tk.Label(root, text=output, wraplength=375, bg=bgcolor, fg='white')
-    outputthis.config(font=('Helvetica,13 '))
-    '''except:
+    try:
+        output=trans.translate(transthis, src=fromcode, dest=tocode)
+        output=output.text
+        outputlabel=tk.Label(root, text='Output:')
+        outputlabel.config(font=('lightcyan,13'), fg='aqua', bg=bgcolor)
+        outputthis=tk.Label(root, text=output, wraplength=375, bg=bgcolor, fg='white')
+        outputthis.config(font=('Helvetica,13 '))
+    except:
         output="The language code(s) may be invalid or the text inputted cannot be processed. See dairyproducts.github.io for troubleshooting."
         outputlabel=tk.Label(root, text='An error has occurred:')
         outputlabel.config(font=('lightcyan,13'), fg='red', bg=bgcolor)
         outputthis=tk.Label(root, text=output, wraplength=375, bg=bgcolor, fg='red')
-        outputthis.config(font=('Helvetica,13 '))'''
+        outputthis.config(font=('Helvetica,13 '))
     canvas.create_window(200, 280, window=outputlabel)
     canvas.create_window(200, 325, window=outputthis)
 
