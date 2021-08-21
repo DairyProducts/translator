@@ -17,3 +17,7 @@ Note: many of these packages may come preinstalled. It's also important to insta
 
 ## If you don't want the source code...
 Head to releases and download.
+
+## How to use
+In the translate from and translate to fields, input the language code of your choice. You must input a language code: https://cloud.google.com/translate/docs/languages
+You can use the little lightbulb button to toggle light and dark modes.
