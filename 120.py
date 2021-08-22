@@ -21,66 +21,34 @@ outputthis=tk.Label(root, text='', wraplength=375, bg=bgcolor, fg='white')
 canvas.create_window(200,325, window=outputthis)
 outputlabel=tk.Label(root, text='', wraplength=375, bg=bgcolor, fg='white')
 canvas.create_window(200,325, window=outputlabel)
-
-class Clock(tk.Label): #I copy/pasted this from https://stackoverflow.com/questions/57632265/how-to-get-the-current-date-to-display-in-a-tkinter-window
-    """ Class that contains the clock widget and clock refresh """
-
-    def __init__(self, parent=None, seconds=True, colon=False):
-        """
-        Create and place the clock widget into the parent element
-        It's an ordinary Label element with two additional features.
-        """
-        tk.Label.__init__(self, parent)
-
-        self.display_seconds = seconds
-        if self.display_seconds:
-            self.time     = time.strftime('%I:%M:%S %p')
-        else:
-            self.time     = time.strftime('%I:%M:%S %p').lstrip('0')
-        self.display_time = self.time
-        self.configure(text=self.display_time)
-
-        if colon:
-            self.blink_colon()
-
-        self.after(200, self.tick)
+label1=tk.Label(root, text='', wraplength=375, bg=bgcolor, fg='white')
+canvas.create_window(200,325, window=outputlabel)
 
 
-    def tick(self):
-        """ Updates the display clock every 200 milliseconds """
-        if self.display_seconds:
-            new_time = time.strftime('%I:%M:%S %p')
-        else:
-            new_time = time.strftime('%I:%M:%S %p').lstrip('0')
-        if new_time != self.time:
-            self.time = new_time
-            self.display_time = self.time
-            self.config(text=self.display_time)
-        self.after(200, self.tick)
-
-
-    def blink_colon(self):
-        """ Blink the colon every second """
-        if ':' in self.display_time:
-            self.display_time = self.display_time.replace(':',' ')
-        else:
-            self.display_time = self.display_time.replace(' ',':',1)
-        self.config(text=self.display_time)
-        self.after(1000, self.blink_colon)
-clock=Clock(root)
-clock.config(font=('Helvetica,13 '))
-clock1=tk.Label(root, text=f"{dt.datetime.now():%a, %b %d %Y}",fg="white", bg=bgcolor, font=("helvetica", 13))
-canvas.create_window(85, 380, window=clock1)
 
 def openlight():
+    global outputthis
+    global outputlabel
+    global label1
+    label1.destroy()
+    outputthis.destroy()
+    outputlabel.destroy()
+    label1 = tk.Label(root, text='Feature in development!')
+    label1.config(font=('helvetica', 13), bg=bgcolor, fg='white')
+    canvas.create_window(200, 280, window=label1)
+    '''
     root.destroy()
     #canvas.destroy()
     import light
     #tk.destroy()
+    '''
+    
 
 def translate():
     global outputthis
     global outputlabel
+    global label1
+    label1.destroy()
     outputthis.destroy()
     outputlabel.destroy()
     fromcode=transfrom.get()
