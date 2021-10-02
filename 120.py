@@ -1,3 +1,5 @@
+# this file is from an earlier version!
+
 import tkinter as tk
 from googletrans import Translator
 import sys
