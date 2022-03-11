@@ -25,4 +25,7 @@ I'm also aware my coding skills are less than mediocre. If you've got ideas for 
 ## If you don't want the source code...
 Head to releases and download.
 
+## "Why don't you fix the spaghetti code?"
+I came up with this idea when I first started doing python and programming as a whole, and I actually made this quite a while back. I only uploaded it to Github a few months ago as of writing. I was never really bothered to clean the code.
+
 
